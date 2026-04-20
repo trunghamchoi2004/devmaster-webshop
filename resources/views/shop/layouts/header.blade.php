@@ -17,9 +17,10 @@
                             <li><a href="{{ route('shop.cart') }}">
                                     Giỏ Hàng
                                     @if(session('cart'))
-                                        <span id="total-qty" class="" style="margin: 5px">( {{session('cart')->totalQty }} )</span>
+                                    <span id="total-qty" class="" style="margin: 5px">( {{session('cart')->totalQty }}
+                                        )</span>
                                     @else
-                                        <span id="total-qty" class="" style="margin: 5px">( 0 )</span>
+                                    <span id="total-qty" class="" style="margin: 5px">( 0 )</span>
                                     @endif
                                 </a></li>
                         </ul>
@@ -38,13 +39,15 @@
             <div class="col-sm-12">
                 <!-- LOGO START -->
                 <div class="logo">
-                    <a href="/"><img src="{{ asset($settings->image) }}" alt="bstore logo" /></a>
+                    <a href="/"><img src="https://static.autofun.vn/pc/vn/images/1d066151762f40ca8e8b.svg" alt="bstore logo"
+                            style="width: 100px;" /></a>
                 </div>
 
                 <div class="categorys-product-search">
                     <form action="{{ route('shop.search') }}" method="GET" class="search-form-cat">
                         <div class="search-product form-group">
-                            <input value="{{ isset($keyword) ? $keyword : '' }}" style="width: 100%" type="text" class="form-control search-form" name="tu-khoa" placeholder="Nhập từ khóa tìm kiếm" />
+                            <input value="{{ isset($keyword) ? $keyword : '' }}" style="width: 100%" type="text"
+                                class="form-control search-form" name="tu-khoa" placeholder="Nhập từ khóa tìm kiếm" />
                             <button class="search-button" type="submit">
                                 <i class="fa fa-search"></i>
                             </button>

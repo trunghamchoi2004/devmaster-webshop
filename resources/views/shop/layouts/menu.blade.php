@@ -43,7 +43,7 @@
                                 @endforeach
                             @endif
                             <li><a href="/khuyen-mai">Khuyến mại</a></li>
-                            <li><a href="/tin-tuc">Tin tức</a></li>
+                            <li><a href="{{route('shop.article')}}">Tin tức</a></li>
                         </ul>
                     </nav>
                 </div>

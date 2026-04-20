@@ -10,8 +10,10 @@ use App\Order;
 use App\OrderDetail;
 use App\Product;
 use http\Env\Response;
+use App\Statistical;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 
 class CartController extends GeneralController
@@ -79,7 +81,7 @@ class CartController extends GeneralController
         // check số lượng lỗi
         if ($validator->fails()) {
             return response()->json([
-                'status'  => false ,
+                'status'  => false,
                 'data' => $validator
             ]);
         }
@@ -103,7 +105,6 @@ class CartController extends GeneralController
             'status'  => true, // thành công
             'data' => view('shop.components.cart')->render()
         ]);
-
     }
 
     // Check mã giảm giá
@@ -187,11 +188,10 @@ class CartController extends GeneralController
         $order->coupon = $_cart->coupon;
         $order->order_status_id = 1; // 1 = mới
         // Tạo mã đơn hàng gửi tới khách hàng
-        $order->code = 'DH-'.date('d').date('m').date('Y').'-'.time();
+        $order->code = 'DH-' . date('d') . date('m') . date('Y') . '-' . time();
         if ($order->save()) {
             $id_order = $order->id;
-            foreach ($_cart->products as $product)
-            {
+            foreach ($_cart->products as $product) {
                 $_detail = new OrderDetail();
                 $_detail->order_id = $id_order;
                 $_detail->name = $product['item']->name;
@@ -206,6 +206,19 @@ class CartController extends GeneralController
                 // Giam số lượng trong kho
             }
 
+            $data = OrderDetail::where('order_id', $order->id)->get();
+            $quantity = 0;
+            foreach ($data as $item) {
+                $quantity +=  $item->qty;
+            }
+            $statistical = new Statistical();
+            $statistical->total_quantity = $quantity;
+            $statistical->total_price = $_cart->totalPrice;
+            $statistical->period = Carbon::now();
+            $statistical->id_user = $order->id;
+            $statistical->id_status = 0;
+            $statistical->save();
+
             // Xóa thông tin giỏ hàng Hiện tại
             $request->session()->forget('cart');
 
@@ -213,7 +226,7 @@ class CartController extends GeneralController
 
 
             return redirect()->route('shop.cart.checkout')
-                             ->with('msg', 'Cảm ơn bạn đã đặt hàng. Mã đơn hàng của bạn : #'.$order->code);
+                ->with('msg', 'Cảm ơn bạn đã đặt hàng. Mã đơn hàng của bạn : #' . $order->code);
         }
     }
 }

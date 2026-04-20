@@ -2,7 +2,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Danh Sách Thương Hiệu <a href="{{route('admin.brand.create')}}" class="btn btn-info pull-right"><i class="fa fa-plus"></i> Thêm Thương Hiệu</a>
+            Danh Sách  loại <a href="{{route('admin.brand.create')}}" class="btn btn-info pull-right"><i class="fa fa-plus"></i> Thêm Loại</a>
         </h1>
     </section>
     <section class="content">
@@ -26,7 +26,7 @@
                         <table class="table table-hover">
                             <tbody>
                             <tr>
-                                <th>Tên Thương Hiệu</th>
+                                <th>Tên  loại</th>
                                 <th>Hình ảnh</th>
                                 <th>WebSite</th>
                                 <th>Vị trí</th>

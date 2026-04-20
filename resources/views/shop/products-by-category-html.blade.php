@@ -20,7 +20,7 @@
                     <div class="product-left-sidebar">
 
                         <div class="product-single-sidebar">
-                            <span class="sidebar-title">Thương hiệu</span>
+                            <span class="sidebar-title">Loại</span>
                             <ul>
                                 <li>
                                     <label class="cheker">

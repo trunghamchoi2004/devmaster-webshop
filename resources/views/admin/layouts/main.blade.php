@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,11 +17,12 @@
     <link rel="stylesheet" href="/backend/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/backend/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/backend/dist/css/skins/_all-skins.min.css">
 
-{{--    <link rel="stylesheet" href="/backend/css/style.css">--}}
+    {{-- <link rel="stylesheet" href="/backend/css/style.css">--}}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,54 +35,55 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <style>
         body {
-            font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
     </style>
     <script type="text/javascript">
-        var base_url = '{{ url('/') }}';
+        var base_url = '{{ url(' / ') }}';
     </script>
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+    <div class="wrapper">
 
-    @include('admin.layouts.header')
-    <!-- Left side column. contains the logo and sidebar -->
-    @include('admin.layouts.sidebar')
+        @include('admin.layouts.header')
+        <!-- Left side column. contains the logo and sidebar -->
+        @include('admin.layouts.sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        @yield('content')
-    </div>
-    <!-- /.content-wrapper -->
-    @include('admin.layouts.footer')
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            @yield('content')
+        </div>
+        <!-- /.content-wrapper -->
+        @include('admin.layouts.footer')
 
-    <!-- Add the sidebar's background. This div must be placed
+        <!-- Add the sidebar's background. This div must be placed
          immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
+        <div class="control-sidebar-bg"></div>
+    </div>
+    <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="/backend/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="/backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Slimscroll -->
-<script src="/backend/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="/backend/bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="/backend/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/backend/dist/js/demo.js"></script>
+    <!-- jQuery 3 -->
+    <script src="/backend/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="/backend/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Slimscroll -->
+    <script src="/backend/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="/backend/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/backend/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/backend/dist/js/demo.js"></script>
 
-<script src="/backend/bower_components/ckeditor/ckeditor.js"></script>
+    <script src="/backend/bower_components/ckeditor/ckeditor.js"></script>
 
-<!-- Thêm File JS ở đây -->
-<script src="/backend/js/main.js"></script>
+    <!-- Thêm File JS ở đây -->
+    <script src="/backend/js/main.js"></script>
 
-<!-- Vị trí dùng để chèn code Javascript -->
-@yield('my_javascript')
+    <!-- Vị trí dùng để chèn code Javascript -->
+    @yield('my_javascript')
 
 </body>
-</html>
 
+</html>

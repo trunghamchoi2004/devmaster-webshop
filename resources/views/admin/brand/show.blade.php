@@ -2,7 +2,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Chi Tiết Thương hiệu <a href="{{route('admin.brand.index')}}" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Danh sách Thương hiệu</a>
+            Chi Tiết loại <a href="{{route('admin.brand.index')}}" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Danh sách  Loại</a>
         </h1>
     </section>
     <section class="content">
@@ -15,7 +15,7 @@
                         <table class="table table-bordered">
                             <tbody>
                             <tr>
-                                <td><b>Tên thương hiệu:</b></td>
+                                <td><b>Tên loại:</b></td>
                                 <td>{{ $data->name }}</td>
                             </tr>
                             <tr>

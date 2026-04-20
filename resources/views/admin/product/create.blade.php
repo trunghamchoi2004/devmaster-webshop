@@ -70,9 +70,9 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Thương hiệu</label>
+                                <label>Loại</label>
                                 <select class="form-control w-50" name="brand_id">
-                                    <option value="0">-- chọn Thương Hiệu--</option>
+                                    <option value="0">-- chọn  Loại--</option>
                                     @foreach($brands as $brand)
                                         <option value="{{ $brand -> id }}">{{ $brand -> name }}</option>
                                     @endforeach

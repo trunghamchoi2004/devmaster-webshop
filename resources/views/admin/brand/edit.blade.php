@@ -2,7 +2,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Chỉnh sửa Thương Hiệu <a href="{{route('admin.brand.index')}}" class="btn btn-success pull-right"><i class="fa fa-list"></i> Danh Sách</a>
+            Chỉnh sửa Loại <a href="{{route('admin.brand.index')}}" class="btn btn-success pull-right"><i class="fa fa-list"></i> Danh Sách</a>
         </h1>
     </section>
 
@@ -14,7 +14,7 @@
 
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Thông tin Thương Hiệu</h3>
+                        <h3 class="box-title">Thông tin Loại</h3>
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->

@@ -107,11 +107,11 @@
                         </div>
                     </div>
                     <!-- SINGLE-PRODUCT INFO TAB END -->
-                    <!-- RELATED-PRODUCTS-AREA START -->
+
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="left-title-area">
-                                <h2 class="left-title">Sản Phẩm Liên Quan</h2>
+                                <h2 class="left-title">Sản Phẩm Đã Xem</h2>
                             </div>
                         </div>
                         <div class="related-product-area featured-products-area">
@@ -120,20 +120,20 @@
                                     <!-- RELATED-CAROUSEL START -->
                                     <div class="related-product">
                                         <!-- SINGLE-PRODUCT-ITEM START -->
-                                        @foreach($relatedProducts as $item)
-                                        <div class="item">
-                                            <div class="single-product-item">
-                                                <div class="product-image">
-                                                    <a href="#"><img src="{{ asset($item->image) }}" alt="{{ $item->name }}" /></a>
-                                                </div>
-                                                <div class="product-info">
-                                                    <a href="#">{{ $product->name }}</a>
-                                                    <div class="price-box">
-                                                        <span class="price">{{ number_format($product->sale,0,",",".") }} đ</span>
+                                        @foreach($viewedProducts as $item)
+                                            <div class="item">
+                                                <div class="single-product-item">
+                                                    <div class="product-image">
+                                                        <a href="#"><img src="{{ asset($item->image) }}" alt="{{ $item->name }}" /></a>
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="#">{{ $product->name }}</a>
+                                                        <div class="price-box">
+                                                            <span class="price">{{ number_format($product->sale,0,",",".") }} đ</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         @endforeach
                                     </div>
                                     <!-- RELATED-CAROUSEL END -->
@@ -141,7 +141,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- RELATED-PRODUCTS-AREA END -->
                 </div>
                 <!-- RIGHT SIDE BAR START -->
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">

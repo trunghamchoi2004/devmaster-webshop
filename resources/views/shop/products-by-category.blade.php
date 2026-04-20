@@ -55,44 +55,44 @@
                                 </li>
                                 <li>
                                     <label class="cheker">
-                                        <input {{ ($filter_price == '1-2000000' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="1-2000000"/>
+                                        <input {{ ($filter_price == '1-200000000' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="1-500000000"/>
                                         <span></span>
                                     </label>
-                                    <a href="#">Dưới 2 triệu
+                                    <a href="#">Dưới 500 triệu
                                     </a>
                                 </li>
                                 <li>
                                     <label class="cheker">
-                                        <input {{ ($filter_price == '2000000-4000000' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="2000000-4000000"/>
+                                        <input {{ ($filter_price == '200000000-400000000' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="300000000-400000000"/>
                                         <span></span>
                                     </label>
-                                    <a href="#">Từ 2 - 4 triệu
+                                    <a href="#">Từ 300 - 400 triệu
                                     </a>
                                 </li>
                                 <li>
                                     <label class="cheker">
-                                        <input {{ ($filter_price == '4000000-7000000' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="4000000-7000000"/>
+                                        <input {{ ($filter_price == '400000000-700000000' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="400000000-700000000"/>
                                         <span></span>
                                     </label>
-                                    <a href="#">Từ 4 - 7 triệu
+                                    <a href="#">Từ 400 - 700 triệu
                                     </a>
                                 </li>
                                 <li>
                                     <label class="cheker">
-                                        <input {{ ($filter_price == '7000000-13000000' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="7000000-13000000"/>
+                                        <input {{ ($filter_price == '700000000-730000000' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="7000000-13000000"/>
                                         <span></span>
                                     </label>
-                                    <a href="#">Từ 7 - 13 triệu
+                                    <a href="#">trên 700 triệu
                                     </a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <label class="cheker">
                                         <input {{ ($filter_price == '13000000-' ? 'checked' : '') }} class="filter-price" type="radio" name="price" value="13000000-"/>
                                         <span></span>
                                     </label>
                                     <a href="#">Trên 13 triệu
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </div>

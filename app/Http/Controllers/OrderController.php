@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use App\OrderStatus;
+use App\Statistical;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
@@ -52,7 +53,6 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-
     }
 
     /**
@@ -91,6 +91,7 @@ class OrderController extends Controller
         $order->order_status_id = $id_status;
         $order->save();
 
+        Statistical::where('id_user', $id)->update(['id_status' => $id_status]);
         return redirect()->back()->with('msg', 'Cập nhật đơn hàng thành công');
     }
 
@@ -111,7 +112,7 @@ class OrderController extends Controller
         $order_id = $request->input('order_id');
 
         return response()->json([
-            'status'  => true ,
+            'status'  => true,
             'data' => 'Xóa sản phẩm thành công'
         ]);
     }

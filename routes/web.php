@@ -1,7 +1,7 @@
 <?php
 
 // Trang chủ
-Route::get('/', 'ShopController@index');
+Route::get('/', 'ShopController@index')->name('trangchu');
 
 Route::get('/lien-he', 'ShopController@contact')->name('shop.contact');
 Route::post('/lien-he', 'ShopController@contactStore')->name('shop.contactStore');
@@ -17,7 +17,7 @@ Route::get('/tim-kiem', 'ShopController@search')->name('shop.search');
 Route::get('/tin-tuc', 'ShopController@getListArticles')->name('shop.article');
 
 // Chi tiet tin tuc
-Route::get('/chi-tiet-tin-tuc', 'ShopController@getArticle')->name('shop.article.detail');
+Route::get('/chi-tiet-tin-tuc/{id}', 'ShopController@getArticle')->name('shop.article.detail');
 
 // Gio hang
 Route::get('/dat-hang', 'CartController@index')->name('shop.cart');
@@ -53,7 +53,7 @@ Route::get('/admin/logout', 'AdminController@logout')->name('admin.logout');
 Route::post('/admin/postLogin', 'AdminController@postLogin')->name('admin.postLogin');
 
 
-Route::group(['prefix' => 'admin','as' => 'admin.'/*, 'middleware' => 'checkLogin'*/], function() {
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'checkLogin'], function () {
     Route::get('/', 'AdminController@index')->name('dashboard');
     Route::resource('category', 'CategoryController');
     Route::resource('product', 'ProductController');
@@ -74,7 +74,9 @@ Route::group(['prefix' => 'admin','as' => 'admin.'/*, 'middleware' => 'checkLogi
     Route::resource('article', 'ArticleController');
     // Cau Hinh Website
     Route::resource('setting', 'SettingController');
+    // dashboard
+    Route::get('dashboard/show-char', 'AdminController@showChar')->name('dashboard.showChar');
+    Route::post('dashboard/filter', 'AdminController@filterChar')->name('dashboard.filterChar');
 });
 
 Auth::routes();
-
